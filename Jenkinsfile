@@ -5,9 +5,9 @@ pipeline {
      stage('Clone'){
       steps{
        echo "checking out the repo"
-       git '  '
+       git 'https://github.com/AbdulItsMe/superserve_webapp.git'
        }
-    }
+     }
      stage('Build')
      {
       steps{
@@ -40,7 +40,7 @@ pipeline {
          sh "docker rm webapp"
          }
      }
-     stage(Docker push'){
+     stage('Docker push'){
      {
        steps{
          sh "docker tag superserve abdulitsme/superserve:v1"
@@ -54,4 +54,6 @@ pipeline {
          cleanWs()
          }
      }   
+   }
+}
      
