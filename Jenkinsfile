@@ -18,12 +18,10 @@ pipeline {
       stage('Quality Check'){
           steps{
               script{
-                  //def scannerhome = tool "Sonarqube";
-                 //withSonarQubeEnv('sonarscanner'){
-                  //    sh "$scannerhome/bin/sonar-scanner"
-                 //  }
-                 sh "./gradlew build"
-                 sh "./gradlew test"
+                  def sonar = tool 'sonarscanner';
+                  withSonarQubeEnv('Sonarqube') {
+                  sh "${sonar}/bin/sonar-scanner -Dsonar.host.url=http://172.31.7.209:9000 -Dsonar.projectBaseDir=/home/ubuntu/jenkins/workspace/sonarcheck"
+            
               }
           }
           
