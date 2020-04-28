@@ -21,7 +21,7 @@ pipeline {
                   //def scannerhome = tool "Sonarqube";
                  //withSonarQubeEnv('sonarscanner'){
                   //    sh "$scannerhome/bin/sonar-scanner"
-                //  }
+                 //  }
                  sh "./gradlew build"
                  sh "./gradlew test"
               }
