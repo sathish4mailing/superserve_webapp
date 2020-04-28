@@ -69,8 +69,8 @@ pipeline {
      
        steps{
          sh "docker login -u abdulitsme -p $paswd"
-         sh "docker tag superserve abdulitsme/superserve:v1"
-         sh "docker push abdulitsme/superserve:v1"
+         sh "docker tag superserve abdulitsme/superserve:v2"
+         sh "docker push abdulitsme/superserve:v2"
          }
       }
      stage('Cleanup')
