@@ -20,7 +20,7 @@ pipeline {
               script{
                   def sonar = tool 'sonarscanner';
                   withSonarQubeEnv('Sonarqube') {
-                  sh "${sonar}/bin/sonar-scanner -Dsonar.host.url=http://172.31.7.209:9000 -Dsonar.projectBaseDir=/home/ubuntu/jenkins/workspace/sonarcheck"
+                  sh "${sonar}/bin/sonar-scanner"
                   } 
               }
           }
