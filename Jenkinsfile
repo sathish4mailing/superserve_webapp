@@ -36,14 +36,14 @@ pipeline {
      stage('Docker Build')
      {
       steps{
-         sh "docker build -t superserve ."
+         sh "sudo docker build -t superserve ."
          }
      }
      
      stage('Docker Deploy')
      {
       steps{
-         sh "docker run -itd -p 8888:8888 --name webapp superserve"
+         sh "sudo docker run -itd -p 8888:8888 --name webapp superserve"
          }
      }
      
