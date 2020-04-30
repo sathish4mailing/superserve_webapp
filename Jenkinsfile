@@ -59,16 +59,16 @@ pipeline {
      stage('Destroy Container')
      {
       steps{
-         sh "docker stop webapp"
-         sh "docker rm webapp"
+         sh "sudo docker stop webapp"
+         sh "sudo docker rm webapp"
          }
      }
      stage('Docker push'){
      
        steps{
-         sh "docker login -u sathish4mailing -p $paswd"
-         sh "docker tag superserve sathish4mailing/superserve:v2"
-         sh "docker push sathish4mailing/superserve:v2"
+         sh "sudo docker login -u sathish4mailing -p $paswd"
+         sh "sudo docker tag superserve sathish4mailing/superserve:v2"
+         sh "sudo docker push sathish4mailing/superserve:v2"
          }
       }
      stage('Cleanup')
