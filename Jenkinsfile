@@ -5,7 +5,7 @@ pipeline {
      stage('SCM'){
       steps{
        echo "checking out the repo"
-       git 'https://github.com/AbdulItsMe/superserve_webapp.git'
+       git 'https://github.com/sathish4mailing/superserve_webapp.git'
       }
      }
      
@@ -66,9 +66,9 @@ pipeline {
      stage('Docker push'){
      
        steps{
-         sh "docker login -u abdulitsme -p $paswd"
-         sh "docker tag superserve abdulitsme/superserve:v2"
-         sh "docker push abdulitsme/superserve:v2"
+         sh "docker login -u sathish4mailing -p $paswd"
+         sh "docker tag superserve sathish4mailing/superserve:v2"
+         sh "docker push sathish4mailing/superserve:v2"
          }
       }
      stage('Cleanup')
